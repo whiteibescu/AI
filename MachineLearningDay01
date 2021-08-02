@@ -1,0 +1,120 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled1.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOlnvz4M6KGzcD1V7xu+Cja",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/whiteibescu/AI/blob/main/MachineLearningDay01\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lyC-NRL7K3XY",
+        "outputId": "dec80b7e-afee-4d4e-e6c6-502e7f4a51cc"
+      },
+      "source": [
+        "import tensorflow as tf\n",
+        "import numpy as np\n",
+        "import random\n",
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "random.seed()\n",
+        "np.random.seed()\n",
+        "\n",
+        "x_0 = tf.random.normal([20], 3, 1)\n",
+        "x_1 = tf.random.normal([20], 5, 5, 1)\n",
+        "y_0 = tf.zeros(20)\n",
+        "y_1 = tf.ones(20)\n",
+        "\n",
+        "x=tf.concat([x_0, x_1], 0)\n",
+        "y=tf.concat([y_0, y_1], 0)\n",
+        "\n",
+        "print(x.shape)\n",
+        "print(y.shape)\n",
+        "print(x_0.shape)\n",
+        "print(x)\n",
+        "print(y)"
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "(40,)\n",
+            "(40,)\n",
+            "(20,)\n",
+            "tf.Tensor(\n",
+            "[ 4.968821    2.2621975   2.6314204   4.0993714   2.5126522   2.4859219\n",
+            "  4.34249     3.5863006   3.2204173   3.7557192   3.8572464   3.8738909\n",
+            "  4.6229444   4.6153913   1.8977826   3.903575    1.7684635   2.7120218\n",
+            "  4.412684    1.7082455  -2.9856925   8.345518    3.7835646   0.6618104\n",
+            "  3.7763615   3.6257348   0.90289545 -4.2053404  -1.6369705  -7.107849\n",
+            "  8.912538   -6.136841    0.8146515   3.7803655   6.8711534   6.4605465\n",
+            "  5.449163    8.770048    6.7386703   1.8851852 ], shape=(40,), dtype=float32)\n",
+            "tf.Tensor(\n",
+            "[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 1.\n",
+            " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.], shape=(40,), dtype=float32)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "CyaIDu8ALB7g"
+      },
+      "source": [
+        "def plot_graph(X, Y, X_hat = None, Y_hat = None, str_title = None):\n",
+        "  fig = pit.figure(figsize=(3, 6))\n",
+        "  if str_title is not None:\n",
+        "    plt.title(str_title, fontsize=20, pad=20)\n",
+        "\n",
+        "  plt.plot(X,Y, ls=\"none\", maker ='o')\n",
+        "\n",
+        "  if(X_hat is not None and Y_hat is not None):\n",
+        "    plt.plot(X_hat, Y_hat)\n",
+        "\n",
+        "  plt.tick_params(axis='both', labelsize=14)\n",
+        "  "
+      ],
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ChvC_7ojLmdZ"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
